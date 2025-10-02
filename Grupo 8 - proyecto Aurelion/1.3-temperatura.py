@@ -19,7 +19,7 @@ def solicitar_temperaturas():
                 temperaturas.append(temp)
                 break
             except ValueError:
-                print("❌ Por favor, ingrese un número válido.")
+                print(" Por favor, ingrese un número válido.")
     
     return temperaturas, dias_semana
 
@@ -43,7 +43,7 @@ def mostrar_resumen(temperaturas, dias_semana, promedio, maxima, minima, dias_ca
     print("=" * 50)
     
     # Mostrar temperaturas registradas
-    print("\n📊 TEMPERATURAS REGISTRADAS:")
+    print("\n TEMPERATURAS REGISTRADAS:")
     print("-" * 30)
     for dia, temp in zip(dias_semana, temperaturas):
         # Agregar indicador visual para temperaturas altas
@@ -51,7 +51,7 @@ def mostrar_resumen(temperaturas, dias_semana, promedio, maxima, minima, dias_ca
         print(f"  {dia:12s}: {temp:6.1f}°C{indicador}")
     
     # Mostrar estadísticas
-    print("\n📈 ESTADÍSTICAS DE LA SEMANA:")
+    print("\n ESTADÍSTICAS DE LA SEMANA:")
     print("-" * 30)
     print(f"  Temperatura Promedio: {promedio:.2f}°C")
     print(f"  Temperatura Máxima:   {maxima:.1f}°C")
@@ -59,7 +59,7 @@ def mostrar_resumen(temperaturas, dias_semana, promedio, maxima, minima, dias_ca
     print(f"  Rango de temperatura: {maxima - minima:.1f}°C")
     
     # Mostrar días calurosos
-    print("\n🌡️  ANÁLISIS DE DÍAS CALUROSOS:")
+    print("\n ANÁLISIS DE DÍAS CALUROSOS:")
     print("-" * 30)
     print(f"  Días con temperatura > 25°C: {dias_calurosos}")
     
@@ -73,7 +73,7 @@ def mostrar_resumen(temperaturas, dias_semana, promedio, maxima, minima, dias_ca
         print("  No hubo días con temperatura superior a 25°C")
     
     # Gráfico de barras simple
-    print("\n📊 GRÁFICO DE TEMPERATURAS:")
+    print("\n GRÁFICO DE TEMPERATURAS:")
     print("-" * 30)
     
     # Normalizar para el gráfico (máximo 40 caracteres de ancho)
@@ -95,7 +95,7 @@ def mostrar_resumen(temperaturas, dias_semana, promedio, maxima, minima, dias_ca
 
 def main():
     """Función principal del programa"""
-    print("\n🌡️  PROGRAMA DE REGISTRO DE TEMPERATURAS 🌡️")
+    print("\n  PROGRAMA DE REGISTRO DE TEMPERATURAS 🌡️")
     print("Este programa registra y analiza las temperaturas de 5 días\n")
     
     try:
@@ -112,12 +112,12 @@ def main():
         mostrar_resumen(temperaturas, dias_semana, promedio, maxima, minima, dias_calurosos)
         
         # Mensaje final
-        print("\n✅ Análisis completado exitosamente")
+        print("\n Análisis completado exitosamente")
         
     except KeyboardInterrupt:
-        print("\n\n⚠️  Programa interrumpido por el usuario")
+        print("\n\n  Programa interrumpido por el usuario")
     except Exception as e:
-        print(f"\n❌ Error inesperado: {e}")
+        print(f"\n Error inesperado: {e}")
 
 if __name__ == "__main__":
     main()
