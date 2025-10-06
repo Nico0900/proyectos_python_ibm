@@ -124,4 +124,12 @@ Desarrollo de un script en Python que consolida las tablas de clientes, ventas, 
 
         
 ## 5. Pseudocódigo
-Esquema de pasos que seguirá el programa.
+
+Información:
+-Evolución mensual de ingresos
+- Top 10 clientes por gasto
+- Productos más vendidos por categoría
+- Preferencias de medios de pago
+
+Pasos
+Psudocódigo
