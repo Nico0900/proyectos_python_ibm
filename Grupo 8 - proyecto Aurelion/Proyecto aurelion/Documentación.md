@@ -26,11 +26,11 @@ Sistema de inteligencia comercial para abasto de alta rentabilidad
 Implementaremos una solución práctica y efectiva que transforme datos en ventajas competitivas:
 
 - Segmentación por frecuencia y valor: Identificación de clientes habituales y de alto gasto para programas de fidelización personalizados.
-- Optimización de surtido y espacio: Análisis de rotación y rentabilidad por producto para determinar el mix ideal y asignación de espacio en góndolas.
-- Gestión Predictiva de Inventario: Sistema para anticipar demanda estacional y optimizar niveles de stock, reduciendo mermas y rupturas.
-- Dashboard Gerencial: Monitoreo de KPIs críticos: margen por categoría, rotación de productos, ticket promedio y frecuencia de compra.
+- Optimización de surtido y espacio: Análisis de rotación de inventrario y rentabilidad por producto para determinar el mix ideal y asignación de espacio en góndolas.
+- Gestión predictiva de inventario: Sistema para anticipar demanda estacional y optimizar niveles de stock, reduciendo mermas y rupturas.
+- Dashboard gerencial: Monitoreo de KPIs críticos: margen por categoría, rotación de productos, ticket promedio y frecuencia de compra.
 
-Resultado Esperado: Incremento del 25% en rentabilidad operativa, reducción del 15% en inventario ocioso y aumento del 30% en lealtad de clientes habituales.
+Resultado Esperado: Incremento de la rentabilidad operativa, reducción del inventario ocioso y aumento de la lealtad de clientes habituales.
 
 ## 4. Bases de datos
 
