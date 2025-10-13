@@ -2,7 +2,11 @@
 Proyecto Aurelion
 
 ## 1. Tema
-Análisis del comportamiento de ventas y clientes de la Tienda Arurelión mediante el procesamiento de datos transaccionales para identificar patrones de compra, productos más rentables y segmentación de clientes.
+Optimización del e-comerce "Tienda Aurelión" para maximizar su rentabilidad y eficiencia operativa
+
+Este proyecto se centra en transformar el e-comerce "Tienda Aurelión" en un negocio altamente rentable mediante el análisis estratégico de datos. Nos enfocaremos en identificar oportunidades de crecimiento, segmentar a los clientes habituales de mayor valor y optimizar la gestión de inventario y surtido para maximizar el margen de beneficio en el competitivo sector de comercio electrónico.
+
+El análisis considerará métricas críticas del negocio como rotación de productos, comportamiento de compra por temporada, lealtad del cliente y eficiencia en la gestión de perecederos, integrando estos insights con los datos transaccionales del punto de venta.
 
 ## 2. Problema
 La tienda carece de información consolidada sobre el rendimiento comercial, no identifica claramente a sus clientes más valiosos, desconoce las tendencias de ventas por temporada y no tiene visibilidad sobre qué productos o categorías generan mayor rentabilidad, lo que dificulta la toma de decisiones estratégicas.
