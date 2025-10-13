@@ -9,10 +9,28 @@ Este proyecto se centra en transformar el e-comerce "Tienda Aurelión" en un neg
 El análisis considerará métricas críticas del negocio como rotación de productos, comportamiento de compra por temporada, lealtad del cliente y eficiencia en la gestión de perecederos, integrando estos insights con los datos transaccionales del punto de venta.
 
 ## 2. Problema
-La tienda carece de información consolidada sobre el rendimiento comercial, no identifica claramente a sus clientes más valiosos, desconoce las tendencias de ventas por temporada y no tiene visibilidad sobre qué productos o categorías generan mayor rentabilidad, lo que dificulta la toma de decisiones estratégicas.
+Gestión ineficiente y pérdida de oportunidades en el negocio
+
+Aurelión enfrenta desafíos específicos de un abasto tradicional:
+
+- Desconocimiento del cliente habitual: No identifica quiénes son sus compradores más frecuentes ni sus patrones de consumo.
+- Gestión de inventario subóptima: Incertidumbre sobre qué productos rotan más rápido y cuáles generan mayor rentabilidad.
+- Surtido no estratégico: Falta de análisis data-driven para determinar la combinación ideal de productos que maximice ventas y margen.
+- Oportunidades de fidelización desaprovechadas: Ausencia de programas dirigidos a clientes frecuentes que incrementen su lealtad y gasto promedio.
+
+Estos problemas limitan la rentabilidad del abasto y afectan su competitividad frente a cadenas organizadas.
 
 ## 3. Solución
-Desarrollo de un script en Python que consolida las tablas de clientes, ventas, detalle_ventas y productos para generar métricas clave como: evolución mensual de ingresos, top 10 clientes por gasto, productos más vendidos por categoría y preferencias de medios de pago.
+Sistema de inteligencia comercial para abasto de alta rentabilidad
+
+Implementaremos una solución práctica y efectiva que transforme datos en ventajas competitivas:
+
+- Segmentación por frecuencia y valor: Identificación de clientes habituales y de alto gasto para programas de fidelización personalizados.
+- Optimización de surtido y espacio: Análisis de rotación y rentabilidad por producto para determinar el mix ideal y asignación de espacio en góndolas.
+- Gestión Predictiva de Inventario: Sistema para anticipar demanda estacional y optimizar niveles de stock, reduciendo mermas y rupturas.
+- Dashboard Gerencial: Monitoreo de KPIs críticos: margen por categoría, rotación de productos, ticket promedio y frecuencia de compra.
+
+Resultado Esperado: Incremento del 25% en rentabilidad operativa, reducción del 15% en inventario ocioso y aumento del 30% en lealtad de clientes habituales.
 
 ## 4. Bases de datos
 
