@@ -95,7 +95,11 @@ PARA cada producto EN Productos:
         clasificacion = "C - Baja rotación"
     FIN SI
     
-    Alerta
+    //Inventario ocioso
+    productos_sin_venta_30dias = CONTAR productos con última venta > 30 días
+    CALCULAR porcentaje_inventario_ocioso = (productos_sin_venta / total_productos) * 100
+
+    //Alerta
     Si producto X es < 20% de stock aletar de reestock
 
     ALMACENAR métricas de rotación
@@ -105,23 +109,21 @@ FIN PARA
 // 4. OPTIMIZACIÓN DE SURTIDO POR CATEGORÍA
 // ============================================
 PARA cada categoria EN Productos.categoria:
-    CALCULAR total_productos = CONTAR(productos en categoría)
-    CALCULAR ingresos_categoria = SUMAR(ingresos de productos)
-    CALCULAR margen_categoria = SUMAR(margen de productos)
-    CALCULAR rentabilidad = (margen_categoria / ingresos_categoria) * 100
+    CALCULAR total_productos = CONTAR(productos por categoría)
+    CALCULAR ingresos_categoria = SUMAR(importe de productos en detalles_ventas)
+    CALCULAR beneficio_categoria = SUMAR(beneficio de productos * cantidad en detalle_ventas)
+    CALCULAR margen de beneficio = (beneficio_categoria / costos_categoria * cantidad en detalle_ventas) * 100
     
     // Identificar productos estrella y rezagados
     productos_categoria = FILTRAR productos por categoría
     ORDENAR productos_categoria por rotacion_mensual DESC
     
-    productos_estrella = TOP 20% productos (alta rotación y margen)
-    productos_rezagados = BOTTOM 20% productos (baja rotación)
+    productos_estrella = TOP 20% productos que generan mayor beneficio
+    productos_rezagados = TOP 20% productos que generan menor beneficio
     
     // Recomendaciones
-    SI rentabilidad < 15% ENTONCES
+    SI margen de beneficio < 10% ENTONCES
         recomendacion = "Revisar precios o considerar descontinuar"
-    SINO SI productos_estrella > 5 ENTONCES
-        recomendacion = "Aumentar stock de productos estrella"
     FIN SI
     
     ALMACENAR análisis por categoría
@@ -130,9 +132,8 @@ FIN PARA
 // ============================================
 // 5. ANÁLISIS ESTACIONAL Y PREDICTIVO
 // ============================================
-PARA cada mes EN rango_fechas:
+PARA cada mes EN rango_fechas (Ventas):
     CALCULAR ventas_mensuales = SUMAR(ventas del mes)
-    CALCULAR productos_vendidos = CONTAR(productos únicos)
     CALCULAR ticket_promedio_mensual = ventas_mensuales / numero_ventas
 FIN PARA
 
@@ -159,17 +160,17 @@ FIN PARA
 // 6. CÁLCULO DE KPIs CRÍTICOS
 // ============================================
 
-// KPI 1: Margen por categoría
+// KPI 1: Beneficio por categoría
 PARA cada categoria:
-    CALCULAR margen_promedio = (SUM(margen) / SUM(ingresos)) * 100
-    ALMACENAR kpi_margen_categoria
+    CALCULAR beneficio_promedio = (SUM(margen_beneficio) / Contar(Productos))*100
+    ALMACENAR kpi_margen de beneficio_categoria
 FIN PARA
 
 // KPI 2: Ticket promedio
-CALCULAR ticket_promedio_general = SUM(importe_ventas) / COUNT(ventas)
+CALCULAR ticket_promedio_general = SUM(importe_ventas) / Contar(ventas)
 
 // KPI 3: Frecuencia de compra promedio
-CALCULAR frecuencia_promedio = AVG(numero_compras_por_cliente)
+CALCULAR frecuencia_promedio = Promedio(numero_compras_por_cliente)
 
 // KPI 4: Tasa de retención
 clientes_periodo_actual = CONTAR clientes activos últimos 30 días
@@ -177,21 +178,14 @@ clientes_periodo_anterior = CONTAR clientes activos 30-60 días atrás
 clientes_retenidos = INTERSECCIÓN(clientes_actual, clientes_anterior)
 CALCULAR tasa_retencion = (clientes_retenidos / clientes_periodo_anterior) * 100
 
-// KPI 5: Ratio de conversión (compras/visitas) - si hay datos
-// Nota: Requeriría datos de tráfico web
-
-// KPI 6: Inventario ocioso
-productos_sin_venta_30dias = CONTAR productos con última venta > 30 días
-CALCULAR porcentaje_inventario_ocioso = (productos_sin_venta / total_productos) * 100
-
 // ============================================
 // 7. IDENTIFICACIÓN DE OPORTUNIDADES
 // ============================================
 
 // Oportunidad 1: Programas de fidelización
-clientes_objetivo = FILTRAR clientes WHERE segmento IN ["VIP", "Leales"]
+clientes_objetivo = FILTRAR clientes WHERE segmento IN ["Platinium", "VIP", "Leales"]
 PARA cada cliente EN clientes_objetivo:
-    CALCULAR descuento_potencial = ticket_promedio * 0.10
+    CALCULAR descuento_potencial = importe total por compra * 0.10
     CALCULAR roi_fidelizacion = (incremento_esperado_compras * valor_promedio) - costo_programa
 FIN PARA
 
@@ -199,11 +193,11 @@ FIN PARA
 PARA cada venta:
     productos_comprados = OBTENER productos de la venta
     ANALIZAR combinaciones_frecuentes = productos que se compran juntos
-    GENERAR recomendaciones_cross_sell
+    GENERAR recomendaciones_cross_selling
 FIN PARA
 
 // Oportunidad 3: Reactivación de clientes en riesgo
-clientes_riesgo = FILTRAR clientes WHERE segmento = "Clientes en Riesgo"
+clientes_riesgo = FILTRAR clientes WHERE segmento = "No tan reciente"
 PARA cada cliente EN clientes_riesgo:
     productos_favoritos = OBTENER productos más comprados por el cliente
     GENERAR campaña_reactivacion(cliente, productos_favoritos)
