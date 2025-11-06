@@ -56,20 +56,7 @@ PARA cada cliente EN Clientes:
     Si ticket promedio es <= 500 es VIP
     Si ticket promedio es > 1000 es Platium
 
-    // Segmentos de clientes
-    SI score_rfm >= 444 ENTONCES
-        segmento = "VIP - Clientes Estrella"
-    SINO SI score_frequency >= 4 Y score_monetary >= 4 ENTONCES
-        segmento = "Clientes Leales"
-    SINO SI score_recency <= 2 ENTONCES
-        segmento = "Clientes en Riesgo"
-    SINO SI numero_compras == 1 ENTONCES
-        segmento = "Nuevos - Una Compra"
-    SINO
-        segmento = "Clientes Ocasionales"
-    FIN SI
-    
-    ALMACENAR segmentación del cliente
+ALMACENAR segmentación del cliente
 FIN PARA
 
 // ============================================
@@ -80,7 +67,7 @@ PARA cada producto EN Productos:
     CALCULAR ingresos_totales = SUMAR(importe)
     CALCULAR frecuencia_venta = CONTAR(ventas distintas)
     
-    // Rotación de inventario (ventas/período)
+    // Rotación de inventario (ventas por período)
     CALCULAR periodo_analisis = MAX(fecha) - MIN(fecha) EN días
     CALCULAR rotacion_mensual = (unidades_vendidas / periodo_analisis)
     
