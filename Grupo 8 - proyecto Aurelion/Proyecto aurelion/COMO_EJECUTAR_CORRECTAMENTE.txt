@@ -1,0 +1,31 @@
+═══════════════════════════════════════════════════════════════
+  CÓMO EJECUTAR EL SCRIPT CORRECTAMENTE
+═══════════════════════════════════════════════════════════════
+
+⚠️  IMPORTANTE: No ejecutes desde el botón "Play" del IDE
+    Usa la Terminal para ver toda la información correctamente.
+
+═══════════════════════════════════════════════════════════════
+  MÉTODO : DESDE LA TERMINAL (RECOMENDADO)
+═══════════════════════════════════════════════════════════════
+1. ingresa en la carpeta en el terminal (/Grupo 8 - proyecto Aurepython lion/Proyecto aurelion/)
+
+   python3 analisis_ventas.py
+
+2.  Verás TODO el proceso en la consola:
+   ✓ Lectura de archivos
+   ✓ Ejemplos de limpieza
+   ✓ Cálculos realizados
+   ✓ Progreso de gráficos
+   ✓ Resumen final
+ß
+═══════════════════════════════════════════════════════════════
+  NOTAS IMPORTANTES
+═══════════════════════════════════════════════════════════════
+
+✓ Las librerías YA ESTÁN INSTALADAS (pandas, matplotlib, openpyxl)
+✓ Los archivos SÍ se generan (revisa la carpeta resultados/)
+✓ Si no ves la salida, es problema del IDE, no del script
+✓ La solución: usar Terminal directamente
+
+═══════════════════════════════════════════════════════════════
